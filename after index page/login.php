@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM `userdetail` WHERE `username`= '$username'";
     $result = mysqli_query($con, $sql);
     $num = mysqli_num_rows($result);
+
     if ($num == 1) {
         while ($row = mysqli_fetch_assoc($result)) {
             if (password_verify($password, $row['password'])) {
@@ -17,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username;
                 header("location: Dashboard.php");
-            }else {
-                $showErr = "Invalid Credentials";
+            } else {
+                $showErr = "Invalid Credentials.";
             }
         }
     } else {
-        $showErr = "Invalid Credentials";
+        $showErr = "Invalid Credentials.";
     }
 }
 ?>
@@ -45,7 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -72,8 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <button type="button" class="btn btn-primary">
         <a href="../index.php">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="White" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="White" class="bi bi-arrow-left-short"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
             </svg>
         </a>
     </button>
@@ -96,10 +101,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <form class="user" method="post" action="login.php">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="username" placeholder="Enter Your Username...">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp" name="username"
+                                                placeholder="Enter Your Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
                                         <button class="btn btn-primary btn-user btn-block">Login</button>
                                     </form>

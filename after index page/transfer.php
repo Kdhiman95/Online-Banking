@@ -53,10 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $transactionId = $random;
     $balance = $row['balance'];
-    //echo $balance;
     if ($balance < $amount) {
         $showAlert = " insufficient balance. <strong>your account balance : $balance</strong>";
-        // break;
     } else if ($faccountNo != NULL && $amount != NULL && $accountNo != $faccountNo) {
         $sql = "UPDATE `userdetail` SET `balance`= `balance`-'$amount' WHERE `accountNO` = '$accountNo'";
         $result = mysqli_query($con, $sql);
