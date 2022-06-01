@@ -13,8 +13,15 @@ $result2 = mysqli_query($con, $sql);
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Transaction History</h1>
     </div>
+
+    <div class="mb-4">
+        <a href="#re"><button type="button" class="btn btn-success" href="#re">Received</button></a>
+        <a href="#se"><button type="button" class="btn btn-danger" href="#se">Send</button></a>
+
+    </div>
+
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h5 class="h5 mb-0 text-success">Received</h5>
+        <h5 class="h5 mb-0 text-success" id="re">Received</h5>
     </div>
     <div>
         <table class="table table-striped">
@@ -45,22 +52,21 @@ $result2 = mysqli_query($con, $sql);
     </div>
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h5 class="h5 mb-0 text-danger">Send</h5>
+        <h5 class="h5 mb-0 text-danger" id="se">Send</h5>
     </div>
-    <div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Account number</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Transtion Id</th>
-                    <th scope="col">Date and Time</th>
-                </tr>
-            </thead>
-            <?php
-            while ($t = mysqli_fetch_assoc($result1)) {
-                echo '
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Account number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Transtion Id</th>
+                <th scope="col">Date and Time</th>
+            </tr>
+        </thead>
+        <?php
+        while ($t = mysqli_fetch_assoc($result1)) {
+            echo '
             <tbody>
                 <tr>
                     <td>' . $t['faccountNo'] . '</td>
@@ -70,10 +76,10 @@ $result2 = mysqli_query($con, $sql);
                     <td>' . $t['DateTime'] . '</td>
                 </tr>
             </tbody>';
-            }
-            ?>
-        </table>
-    </div>
+        }
+        ?>
+    </table>
+</div>
 
 
 </div>

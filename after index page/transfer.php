@@ -17,14 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $accountNo = $row['accountNo'];
     $faccountNo = $_POST['accountNo'];
     $amount = $_POST['amount'];
-    
+
     $sql = "SELECT firstName,lastName FROM `userdetail` WHERE accountNo = '$accountNo'";
     $result1 = mysqli_query($con, $sql);
     $fetch = mysqli_fetch_assoc($result1);
     $num = mysqli_num_rows($result1);
     //echo $num;
     $name = "";
-    if($num){
+    if ($num) {
         $name = $fetch['firstName'] . " " . $fetch['lastName'];
     }
     //echo $name;
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $num1 = mysqli_num_rows($result2);
     //echo $num1;
     $fname = "";
-    if($num1){
+    if ($num1) {
         $fname = $fetch2['firstName'] . " " . $fetch2['lastName'];
     }
     //echo $fname;
@@ -52,8 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     $transactionId = $random;
-
-    if ($faccountNo != NULL && $amount != NULL && $accountNo != $faccountNo) {
+    $balance = $row['balance'];
+    //echo $balance;
+    if ($balance < $amount) {
+        $showAlert = " insufficient balance. <strong>your account balance : $balance</strong>";
+        // break;
+    } else if ($faccountNo != NULL && $amount != NULL && $accountNo != $faccountNo) {
         $sql = "UPDATE `userdetail` SET `balance`= `balance`-'$amount' WHERE `accountNO` = '$accountNo'";
         $result = mysqli_query($con, $sql);
         $sql = "UPDATE `userdetail` SET `balance`= `balance`+'$amount' WHERE `accountNO` = '$faccountNo'";
@@ -96,13 +100,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form class="user" method="post" action="transfer.php">
                     <div class="form-group">
                         <span class="label label-default"> &nbsp &nbsp Enter Account number :</span>
-                        <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="accountNo" placeholder="Enter Account no.">
+                        <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                            aria-describedby="emailHelp" name="accountNo" placeholder="Enter Account no.">
                     </div>
                     <div class="form-group">
                         <span class="label label-default"> &nbsp &nbsp Amount :</span>
-                        <input type="number" min="10" max="10000" class="form-control form-control-user" id="exampleInputPassword" placeholder="Amount" name="amount">
+                        <input type="number" min="10" max="10000" class="form-control form-control-user"
+                            id="exampleInputPassword" placeholder="Amount" name="amount">
                     </div>
-                    <button class="btn btn-success btn-user btn-block" data-toggle="modal" data-target="#myModal">Tranfer</button>
+                    <button class="btn btn-success btn-user btn-block" data-toggle="modal"
+                        data-target="#myModal">Tranfer</button>
                 </form>
             </div>
         </div>
