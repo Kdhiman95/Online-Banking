@@ -1,9 +1,9 @@
 <?php
 include "main.php";
 $accountNo = $row['accountNo'];
-$sql = "SELECT * FROM `transaction` WHERE `accountNo`='$accountNo'";
+$sql = "SELECT * FROM `transaction` WHERE `accountNo`='$accountNo' ORDER BY `DateTime` DESC";
 $result1 = mysqli_query($con, $sql);
-$sql = "SELECT * FROM `transaction` WHERE `faccountNo`='$accountNo'";
+$sql = "SELECT * FROM `transaction` WHERE `faccountNo`='$accountNo'ORDER BY `DateTime` DESC";
 $result2 = mysqli_query($con, $sql);
 ?>
 <!-- Begin Page Content -->
