@@ -389,7 +389,7 @@ include "header.php";
                     <div class="row">
                         <div class="col-md-4 d-flex">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="assets/img/developers/Kamal.jpg" alt="John Doe">
+                                <img class="card-img-top" src="assets/img/developers/Kamal.jpg" alt="Kamal Dhiman">
                                 <div class="card-body py-3">
                                     <h5 class="mb-0">Kamal Dhiman</h5>
                                     <span>Student</span>
@@ -401,7 +401,7 @@ include "header.php";
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="assets/img/developers/Ankit.jpg" alt="Noel Flantier">
+                                <img class="card-img-top" src="assets/img/developers/Ankit.jpg" alt="Ankit bhardhaj">
                                 <div class="card-body py-3">
                                     <h5 class="mb-0">Ankit Bhardhwaj</h5>
                                     <span>Student</span>
@@ -413,7 +413,8 @@ include "header.php";
                         </div>
                         <div class="col-md-4 d-flex">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="assets/img/developers/Harmunish.jpg" alt="Jamie Doe">
+                                <img class="card-img-top" src="assets/img/developers/Harmunish.jpg"
+                                    alt="Dr. Harmunish Taneja">
                                 <div class="card-body py-3">
                                     <h5 class="mb-0">Dr. Harmunish Taneja</h5>
                                     <span>Teacher</span>
