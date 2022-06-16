@@ -1,7 +1,15 @@
 <?php
 include "header.php";
 ?>
+<style>
+.plus-sign:before {
+    content: "+";
+}
 
+.satis:after {
+    content: "+";
+}
+</style>
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
 
@@ -60,26 +68,43 @@ include "header.php";
             <div class="row counters">
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="4000" data-purecounter-duration="1"
-                        class="purecounter"></span>
+                    <div class="row justify-content-md-center">
+                        <span data-purecounter-start=" 0" data-purecounter-end="4000" data-purecounter-duration="1"
+                            class="purecounter col-5">
+                        </span>
+                        <span class="plus-sign col-3">
+                        </span>
+                    </div>
                     <p>Customer</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
-                        class="purecounter"></span>
+                    <div class="row justify-content-md-center">
+                        <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"
+                            class="purecounter col-3"></span>
+                        <span class="plus-sign col-2">
+                        </span>
+                    </div>
                     <p>Services</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="700" data-purecounter-duration="1"
-                        class="purecounter"></span>
+                    <div class="row justify-content-md-center">
+                        <span data-purecounter-start="0" data-purecounter-end="700" data-purecounter-duration="1"
+                            class="purecounter col-4"></span>
+                        <span class="plus-sign col-2">
+                        </span>
+                    </div>
                     <p>Branches</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1"
-                        class="purecounter"></span>
+                    <div class="row justify-content-md-center">
+                        <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1"
+                            class="purecounter col-4"></span>
+                        <span class="plus-sign col-2">
+                        </span>
+                    </div>
                     <p>Employee</p>
                 </div>
 
@@ -475,4 +500,5 @@ include "header.php";
 
 <?php
 include "footer.php";
+?>clude "footer.php";
 ?>
