@@ -500,5 +500,4 @@ include "header.php";
 
 <?php
 include "footer.php";
-?>clude "footer.php";
 ?>
