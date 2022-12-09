@@ -1,7 +1,5 @@
 ﻿# Online-Banking
 
-[![](https://jitpack.io/v/Kdhiman95/Online-Banking.svg)](https://jitpack.io/#Kdhiman95/Online-Banking)
-
 # For run this porject this project
 
     1. create folder named as "Bank" at location "C:\xampp\htdocs\";
